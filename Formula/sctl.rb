@@ -8,7 +8,17 @@ class Sctl < Formula
 
   depends_on "go" => :build
 
+  # 源码包里没有 Node 构建产物：下载同版本发布的扩展 zip，编译前放进内嵌目录，sctl browsers install 才有扩展可写。
+  resource "browser-extension" do
+    url "https://github.com/scriptscat/sctl/releases/download/v0.2.0/sctl-browser-extension-0.2.0.zip"
+    sha256 "3b4b351f927ff089b71759cd640cf6e52a3229548979ceda1481558f7b3b6770"
+  end
+
   def install
+    resource("browser-extension").stage do
+      (buildpath/"internal/pkg/browserext/dist").install Dir["*"]
+    end
+
     ldflags = %W[
       -X github.com/scriptscat/sctl/internal/cli.Version=#{version}
       -X github.com/scriptscat/sctl/internal/cli.BuildDate=#{time.iso8601}

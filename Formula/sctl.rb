@@ -10,7 +10,6 @@ class Sctl < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/scriptscat/sctl/internal/cli.Version=#{version}
       -X github.com/scriptscat/sctl/internal/cli.BuildDate=#{time.iso8601}
     ]

@@ -1,8 +1,8 @@
 class Sctl < Formula
   desc "ScriptCat local control tool: bridge daemon, MCP server and script CLI"
   homepage "https://github.com/scriptscat/sctl"
-  url "https://github.com/scriptscat/sctl/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "d91439c9394d6599cba514a0be98ddbbabdef9b33c7e050f44c2f6fb7aca949a"
+  url "https://github.com/scriptscat/sctl/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "74eac9fa5cd13c7b6117cce012026fbee0d56ad80feb7fbd42ba16e1a5314282"
   license "GPL-3.0-only"
   head "https://github.com/scriptscat/sctl.git", branch: "main"
 
